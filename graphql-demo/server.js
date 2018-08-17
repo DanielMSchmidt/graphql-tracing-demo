@@ -21,6 +21,11 @@ app.use(
     graphiql: true
   })
 );
+
+app.use("/health", (req, res) => {
+  res.sendStatus(200).end();
+});
+
 app.listen(4000, () =>
   console.log(
     "Express GraphQL Server Now Running On http://localhost:4000/graphql"
